@@ -1,0 +1,106 @@
+.odds-section {
+  padding: 60px 5%;
+  background-color: #f8f9fa;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.badge {
+  background: #27ae60;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Grid Layout */
+.odds-grid {
+  display: grid;
+  /* Automatically creates columns based on available space */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Card Styling */
+.odds-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  border-left: 5px solid #27ae60; /* Highlight bar */
+}
+
+.odds-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.match-name {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.prediction-box {
+  background: #f1f8f4;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #27ae60;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.prediction-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #27ae60;
+  margin: 0;
+}
+
+/* Empty State */
+.no-tips {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  background: #eee;
+  border-radius: 8px;
+  color: #666;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+  .odds-grid {
+    grid-template-columns: 1fr; /* Force single column on tiny screens */
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+}

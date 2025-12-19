@@ -1,0 +1,86 @@
+.contact-section {
+  padding: 80px 5%;
+  background-color: #0f172a; /* Matching the Odds Section background */
+  text-align: center;
+}
+
+.contact-header h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  color: #94a3b8;
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: #1e293b;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  border-color: #22c55e;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-card h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.contact-card p {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+.contact-action {
+  color: #22c55e;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 50px 20px;
+  }
+  
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr; /* Stack vertically on small phones */
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+}

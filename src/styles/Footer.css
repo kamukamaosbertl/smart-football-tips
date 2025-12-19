@@ -1,0 +1,78 @@
+.footer {
+  background-color: #0b1120; /* Slightly darker than the main sections */
+  padding: 50px 5% 20px;
+  color: #94a3b8;
+  border-top: 1px solid #1e293b;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-brand {
+  text-align: center;
+}
+
+.footer-brand h3 {
+  color: #ffffff;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-socials a {
+  color: #94a3b8;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #22c55e; /* Green highlight on hover */
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #1e293b;
+  padding-top: 25px;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.disclaimer {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 0.75rem; /* Removed the "! from" error */
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-socials {
+    gap: 35px; /* Easier to tap on mobile */
+  }
+
+  .disclaimer {
+    font-size: 0.7rem;
+    text-align: justify; /* Looks cleaner on small screens */
+  }
+}

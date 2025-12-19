@@ -1,0 +1,119 @@
+.about-section {
+  padding: 80px 5%;
+  background-color: #1e293b; /* Slightly lighter than the Odds section for contrast */
+  color: #ffffff;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.subtitle {
+  color: #22c55e;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.about-text h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.about-text p {
+  color: #94a3b8;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* Features Grid */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  background: rgba(34, 197, 94, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+.feature-item h4 {
+  margin: 0 0 5px 0;
+  color: #ffffff;
+}
+
+.feature-item p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Image/Graphic Side */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(45deg, #0f172a, #334155);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #475569;
+}
+
+.stats-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: #22c55e;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: 900;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 968px) {
+  .about-container {
+    flex-direction: column; /* Stacks text on top of image */
+    text-align: center;
+  }
+
+  .feature-item {
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+  
+  .image-placeholder {
+    height: 300px;
+  }
+}

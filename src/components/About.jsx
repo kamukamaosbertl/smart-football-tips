@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles/About.css";
 
-export default function About() {
+// We receive liveWinRate as a prop from App.jsx
+export default function About({ liveWinRate }) {
   return (
     <section id="about" className="about-section">
       <div className="about-container">
@@ -34,14 +35,16 @@ export default function About() {
         
         <div className="about-image">
           <div className="image-placeholder">
-            {/* High-quality dark stadium image for a premium sportsbook feel */}
+            {/* Professional action shot of a footballer on a dark background */}
             <img 
-              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=80" 
-              alt="Football Stadium Analysis" 
-              className="about-img"
-            />
+                  src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop" 
+                  alt="Professional football player in action" 
+                  className="about-img"
+                  onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop" }}
+                />
             <div className="stats-overlay">
-              <span>85% Win Rate</span>
+              {/* This span now pulls live data from your spreadsheet calculation */}
+              <span>{liveWinRate}% Win Rate</span>
             </div>
           </div>
         </div>

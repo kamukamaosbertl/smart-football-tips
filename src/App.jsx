@@ -25,13 +25,10 @@ export default function App() {
           if (!res.ok) throw new Error("Failed to fetch");
           const csvText = await res.text();
           
-          // Split rows and filter out totally empty lines
           const rows = csvText.split(/\r?\n/).filter(row => row.trim().includes(","));
 
           return rows.slice(1).map(row => {
             const columns = row.split(",");
-            
-            // Clean up the status: remove spaces and make lowercase
             const rawStatus = columns[2]?.trim().toLowerCase() || "pending";
 
             return { 
@@ -60,20 +57,33 @@ export default function App() {
     fetchAllTips();
   }, []);
 
+  // --- DYNAMIC WIN RATE CALCULATION ---
+  const allTips = [...odd15, ...odd2];
+  const historyTips = allTips.filter(t => t.status === "won" || t.status === "lost");
+  const wins = historyTips.filter(t => t.status === "won").length;
+  
+  // Calculate percentage. If no games played yet, it defaults to "85"
+  const calculatedRate = historyTips.length > 0 
+    ? Math.round((wins / historyTips.length) * 100) 
+    : 85;
+
   return (
     <>
       <Header />
       {isLoading ? (
         <div className="loader" style={{textAlign:'center', padding:'40px', color:'#22c55e'}}>Updating...</div>
       ) : error ? (
-        <div className="error">{error}</div>
+        <div className="error" style={{textAlign:'center', color:'red'}}>{error}</div>
       ) : (
         <main>
           <OddsSection id="odd15" title="ODD 1.5" tips={odd15} />
           <OddsSection id="odd2" title="ODD 2" tips={odd2} />
         </main>
       )}
-      <About />
+      
+      {/* Passing the live rate to the About component */}
+      <About liveWinRate={calculatedRate} />
+      
       <Contact />
       <Footer />
     </>

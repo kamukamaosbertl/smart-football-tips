@@ -33,8 +33,13 @@ export default function About() {
         </div>
         
         <div className="about-image">
-          {/* You can replace this with a real image of a stadium or data chart */}
           <div className="image-placeholder">
+            {/* High-quality dark stadium image for a premium sportsbook feel */}
+            <img 
+              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=80" 
+              alt="Football Stadium Analysis" 
+              className="about-img"
+            />
             <div className="stats-overlay">
               <span>85% Win Rate</span>
             </div>

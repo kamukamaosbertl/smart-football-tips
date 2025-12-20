@@ -1,119 +1,163 @@
+/* Container & Layout */
 .about-section {
-  padding: 80px 5%;
-  background-color: #1e293b; /* Slightly lighter than the Odds section for contrast */
-  color: #ffffff;
+  padding: 100px 5%;
+  background-color: #0f172a; /* Deep dark blue to match Odds Section */
+  color: #f8fafc;
+  overflow: hidden;
 }
 
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Clean split layout */
   align-items: center;
-  gap: 50px;
+  gap: 80px;
 }
 
+/* Typography */
 .about-text {
   flex: 1;
 }
 
 .subtitle {
+  display: block;
   color: #22c55e;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2px;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
 }
 
 .about-text h2 {
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  margin: 15px 0;
-  line-height: 1.2;
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  color: #ffffff;
 }
 
 .about-text p {
   color: #94a3b8;
-  line-height: 1.6;
+  line-height: 1.8;
   font-size: 1.1rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-/* Features Grid */
+/* Features Styling */
 .features {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  gap: 25px;
 }
 
 .feature-item {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   align-items: flex-start;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(10px);
+  background: rgba(34, 197, 94, 0.05);
+  border-color: rgba(34, 197, 94, 0.2);
 }
 
 .feature-icon {
-  background: rgba(34, 197, 94, 0.1);
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 1.5rem;
+  background: rgba(34, 197, 94, 0.15);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 1.8rem;
+  line-height: 1;
 }
 
 .feature-item h4 {
   margin: 0 0 5px 0;
+  font-size: 1.2rem;
   color: #ffffff;
+  font-weight: 700;
 }
 
 .feature-item p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin: 0;
+  color: #94a3b8;
+  line-height: 1.5;
 }
 
-/* Image/Graphic Side */
+/* Image & Stats Badge */
 .about-image {
-  flex: 1;
+  position: relative;
   display: flex;
   justify-content: center;
 }
 
 .image-placeholder {
   width: 100%;
-  height: 400px;
-  background: linear-gradient(45deg, #0f172a, #334155);
-  border-radius: 20px;
+  height: 500px;
+  border-radius: 30px;
   position: relative;
   overflow: hidden;
-  border: 1px solid #475569;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6) contrast(1.1); /* Makes the stadium look moody/pro */
 }
 
 .stats-overlay {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: #22c55e;
-  padding: 15px 25px;
-  border-radius: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the badge over the image */
+  background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+  padding: 20px 35px;
+  border-radius: 20px;
+  color: white;
   font-weight: 900;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  font-size: 1.6rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(34, 197, 94, 0.4);
+  white-space: nowrap;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: floatBadge 4s ease-in-out infinite;
 }
 
-/* --- Media Queries --- */
+/* Animations */
+@keyframes floatBadge {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, -60%); }
+}
 
+/* Media Queries */
 @media (max-width: 968px) {
   .about-container {
-    flex-direction: column; /* Stacks text on top of image */
+    grid-template-columns: 1fr;
     text-align: center;
+    gap: 50px;
   }
 
   .feature-item {
     text-align: left;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
   }
 
-  .about-image {
-    width: 100%;
-  }
-  
   .image-placeholder {
-    height: 300px;
+    height: 350px;
+  }
+
+  .stats-overlay {
+    font-size: 1.3rem;
+    padding: 15px 25px;
   }
 }

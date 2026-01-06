@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Header.css";
-import logoImg from "../assets/logo.png";
+import logoImg from "../assets/logo.jpeg";
 
 export default function Header() {
   const handleScroll = (e) => {
